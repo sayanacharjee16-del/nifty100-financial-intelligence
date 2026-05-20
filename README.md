@@ -115,8 +115,9 @@ Bash
 celery -A b100_intelligence worker -l info --pool=solo
 
 ### 👤 Author
-Sayan Acharjee
+## Sayan Acharjee
 
-Data Analyst / Full-Stack Data Engineer
-Bangalore, India
+## Data Analyst / Full-Stack Data Engineer
+
+## Bangalore, India
 
