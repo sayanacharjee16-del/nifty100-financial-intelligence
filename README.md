@@ -69,8 +69,8 @@ I designed and built five tailored analytics pages for deep financial research:
 
 I have fully deployed the backend system to production on **Render** connected with a serverless **Neon Postgres** database.
 
-- **My Live API Endpoint:** `https://nifty100-financial-intelligence-6y2s.onrender.com`
-- **My Interactive OpenAPI/Swagger Documentation:** `https://nifty100-financial-intelligence-6y2s.onrender.com/api/docs/`
+- **My Live API Endpoint:** https://nifty100-financial-intelligence-6y2s.onrender.com
+- **My Interactive OpenAPI/Swagger Documentation:** https://nifty100-financial-intelligence-6y2s.onrender.com/api/docs/
 
 ### Key Endpoints:
 - `GET /api/companies/` - Fetches metadata and financial profiles for listed Nifty 100 enterprises.
