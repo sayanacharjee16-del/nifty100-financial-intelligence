@@ -116,6 +116,7 @@ celery -A b100_intelligence worker -l info --pool=solo
 
 ### 👤 Author
 Sayan Acharjee
-Aspiring Data Analyst / Full-Stack Data Engineer
+
+Data Analyst / Full-Stack Data Engineer
 Bangalore, India
 
