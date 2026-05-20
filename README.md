@@ -113,9 +113,10 @@ The interactive local documentation will now be available at http://127.0.0.1:80
 5. Start the Celery Worker (In a separate terminal)
 Bash
 celery -A b100_intelligence worker -l info --pool=solo
-👤 Author
-Sayan Acharjee Aspiring Data Analyst / Full-Stack Data Engineer
 
+👤 Author
+Sayan Acharjee
+Aspiring Data Analyst / Full-Stack Data Engineer
 Bangalore, India
 
 
