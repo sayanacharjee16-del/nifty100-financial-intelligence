@@ -91,12 +91,12 @@ If you want to run this project locally, follow these steps:
 bash
 git clone [https://github.com/sayanacharjee16-del/nifty100-financial-intelligence.git](https://github.com/sayanacharjee16-del/nifty100-financial-intelligence.git)
 cd "Building Nifty 100 Financial System"
-2. Configure Virtual Environment & Install Dependencies
+### 2. Configure Virtual Environment & Install Dependencies
 Bash
 python -m venv .venv
 source .venv/bin/activate  # On Windows use: .venv\Scripts\activate
 pip install -r requirements.txt
-3. Set Up Environment Variables
+### 3. Set Up Environment Variables
 Create a .env file in the root project directory (next to manage.py):
 
 Code snippet
@@ -104,17 +104,17 @@ SECRET_KEY=your_django_secret_key
 DEBUG=True
 NEON_DB_URL=your_postgresql_connection_string
 UPSTASH_REDIS_URL=your_redis_connection_string
-4. Apply Database Migrations & Run Web Server
+### 4. Apply Database Migrations & Run Web Server
 Bash
 python manage.py migrate
 python manage.py runserver
 The interactive local documentation will now be available at http://127.0.0.1:8000/api/docs/
 
-5. Start the Celery Worker (In a separate terminal)
+### 5. Start the Celery Worker (In a separate terminal)
 Bash
 celery -A b100_intelligence worker -l info --pool=solo
 
-👤 Author
+### 👤 Author
 Sayan Acharjee
 Aspiring Data Analyst / Full-Stack Data Engineer
 Bangalore, India
