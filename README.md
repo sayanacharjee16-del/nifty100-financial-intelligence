@@ -88,7 +88,7 @@ If you want to run this project locally, follow these steps:
 - Credentials for a PostgreSQL and Redis instance (local or cloud)
 
 ### 1. Clone the Repository
-```bash
+bash
 git clone [https://github.com/sayanacharjee16-del/nifty100-financial-intelligence.git](https://github.com/sayanacharjee16-del/nifty100-financial-intelligence.git)
 cd "Building Nifty 100 Financial System"
 2. Configure Virtual Environment & Install Dependencies
