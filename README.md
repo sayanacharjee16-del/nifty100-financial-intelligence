@@ -8,7 +8,7 @@ An enterprise-grade, full-stack financial intelligence platform I designed and e
 
 I engineered this platform using a split-stream decoupled architecture to isolate resource-heavy computing from the web server and ensure production stability:
 
-`[ Raw Financial Data / DB Rows ]
+[ Raw Financial Data / DB Rows ]
 │
 ▼
 ┌───────────────────┐
@@ -31,7 +31,7 @@ I engineered this platform using a split-stream decoupled architecture to isolat
 ▼
 ┌───────────────────┐
 │   Celery Worker   │◀─── [ Machine Learning Scoring Engine ]
-└───────────────────┘             (Stream B: Heavy Computing Pipeline)`
+└───────────────────┘             (Stream B: Heavy Computing Pipeline)
 
 
 1. **Stream A (Visual Analytics Interface):** I established direct, native database connections from Power BI Desktop to my cloud data warehouse over encrypted channels, mapping out corporate structures into dynamic data models (`fact_balance_sheet`, `fact_cash_flow`, `fact_profit_loss`, `dim_company`).
