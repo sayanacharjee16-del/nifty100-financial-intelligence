@@ -14,4 +14,3 @@ env/
 db.sqlite3
 
 # Power BI
-*.pbix
