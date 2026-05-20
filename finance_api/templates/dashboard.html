@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nifty 100 Intelligence Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 20px; background-color: #f0f2f5; }
+        .container { max-width: 1100px; margin: auto; background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+        .controls { margin-bottom: 20px; display: flex; gap: 10px; }
+        input { padding: 10px; border: 1px solid #ddd; border-radius: 5px; flex-grow: 1; }
+        .chart-container { position: relative; height: 80vh; overflow-y: auto; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Nifty 100 Financial Health Overview</h1>
+
+        <div class="controls">
+            <input type="text" id="searchInput" placeholder="Search by Company ID (e.g., RELIANCE, TCS)..." onkeyup="filterData()">
+        </div>
+
+        <div class="chart-container">
+            <canvas id="healthChart"></canvas>
+        </div>
+    </div>
+
+    <script>
+        let myChart;
+        let originalData = [];
+
+        // 1. Fetch data from your Django API
+        fetch('/api/scores/')
+            .then(res => res.json())
+            .then(data => {
+                originalData = data;
+                renderChart(data);
+            });
+
+        function renderChart(data) {
+            const ctx = document.getElementById('healthChart').getContext('2d');
+
+            // Sort data by score (Highest first)
+            data.sort((a, b) => b.overall_score - a.overall_score);
+
+            if (myChart) { myChart.destroy(); }
+
+            myChart = new Chart(ctx, {
+                type: 'indexAxis' === 'y' ? 'bar' : 'bar', // Force horizontal
+                data: {
+                    labels: data.map(item => item.company_id),
+                    datasets: [{
+                        label: 'Health Score',
+                        data: data.map(item => item.overall_score),
+                        backgroundColor: data.map(item => {
+                            if (item.overall_score >= 80) return '#2ecc71'; // Green
+                            if (item.overall_score >= 60) return '#f1c40f'; // Yellow
+                            return '#e74c3c'; // Red
+                        }),
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    indexAxis: 'y', // This makes the chart horizontal and readable
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: false }
+                    },
+                    scales: {
+                        x: { beginAtZero: true, max: 100, title: { display: true, text: 'Score' } }
+                    }
+                }
+            });
+        }
+
+        // 2. Search Functionality
+        function filterData() {
+            const term = document.getElementById('searchInput').value.toUpperCase();
+            const filtered = originalData.filter(item => item.company_id.includes(term));
+            renderChart(filtered);
+        }
+    </script>
+</body>
+</html>

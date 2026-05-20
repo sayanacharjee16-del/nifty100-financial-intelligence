@@ -1,0 +1,12 @@
+pandas
+numpy
+SQLAlchemy
+psycopg2-binary
+openpyxl
+matplotlib
+seaborn
+scikit-learn
+sqlalchemy
+psycopg2-binary
+python-dotenv
+djangorestframework
