@@ -119,13 +119,3 @@ Sayan Acharjee
 Aspiring Data Analyst / Full-Stack Data Engineer
 Bangalore, India
 
-
----
-
-### Step 2: Push it up!
-Open your terminal in the project directory and run your Git commands to send the updated document to the cloud:
-
-```powershell
-git add README.md
-git commit -m "Docs: Add personal full-stack project README with architecture"
-git push origin main
